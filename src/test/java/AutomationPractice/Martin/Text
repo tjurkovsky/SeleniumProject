@@ -1,0 +1,10 @@
+Testware:
+
+LOGIN:
+-If wrong format of email is entered,error shows up     |OK
+-If non existing user tries to login,error shows up |OK
+-if existing user tries to login,no error is shown up and user is logged in |OK
+
+SIGN UP:
+-If wrong format of email is entered,error shows up |OK
+-User is able to create a new account |OK
