@@ -99,7 +99,7 @@ public class SignUpLogin {
     @Test
     public void signUp(){
         driver.findElement(By.linkText("Sign in")).click();
-        driver.findElement(By.id("email_create")).sendKeys("jearrywooddsburnasdas@seznam.cz");
+        driver.findElement(By.id("email_create")).sendKeys("jsearrywooddsburnasdas@seznam.cz");
         driver.findElement(By.id("email_create")).submit();
         try{
             driver.findElement(By.id("id_gender1")).click();
