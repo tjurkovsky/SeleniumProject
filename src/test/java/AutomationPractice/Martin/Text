@@ -8,3 +8,6 @@ LOGIN:
 SIGN UP:
 -If wrong format of email is entered,error shows up |OK
 -User is able to create a new account |OK
+
+DASHBOARD:
+-You see 3 tabs ---> WOMEN,DRESSES,T-SHIRTS.

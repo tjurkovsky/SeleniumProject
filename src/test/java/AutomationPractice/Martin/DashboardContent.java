@@ -31,7 +31,7 @@ public class DashboardContent {
                 driver.findElement(By.id("email")).sendKeys("jerrywoodburn@seznam.cz");
                 driver.findElement(By.id("passwd")).sendKeys("kiklop");
                 driver.findElement(By.id("SubmitLogin")).click();
-                driver.get("http://automationpractice.com/index.php");
+                driver.findElement(By.xpath("//a[@class='btn btn-default button button-small'][@href='http://automationpractice.com/']")).click();
             }
         }
         catch (Exception e){
@@ -39,7 +39,7 @@ public class DashboardContent {
     }
     @Test
     public void checkTabsExist(){
-        List<WebElement>listOfTabs = new ArrayList<WebElement>();
+        List<WebElement> listOfTabs = new ArrayList<WebElement>();
         try {
             listOfTabs.add(driver.findElement(By.linkText("Women")));
             listOfTabs.add(driver.findElement(By.linkText("Dresses")));
@@ -52,8 +52,7 @@ public class DashboardContent {
     } //checks if all three tabs exist on the home page
     @After
     public void goBackToHomeDashboard(){
-        driver.get("http://automationpractice.com/index.php");
+        //driver.get("http://automationpractice.com/index.php");
     }
-
 
 }
