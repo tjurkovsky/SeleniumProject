@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dde6c62-9115-402e-b14f-900eeb8d7f9a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chromedriver.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/HomeDashboard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/LoginPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/HomeDashboard.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/LoginPage.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SeleniumProject.iml" afterPath="$PROJECT_DIR$/SeleniumProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="SeleniumProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,12 +37,11 @@
         </entry>
       </file>
       <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/LoginPage.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParaForumProjectExample/LoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="method#openBrowser#0;class#LoginPage#0" expanded="false" />
                 <element signature="method#validLogin#0;class#LoginPage#0" expanded="false" />
@@ -57,10 +52,10 @@
         </entry>
       </file>
       <file leaf-file-name="HomeDashboard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/HomeDashboard.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParaForumProjectExample/HomeDashboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="35" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="35" />
+            <state relative-caret-position="186">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#checkTabsExist#0;class#HomeDashboard#0" expanded="false" />
@@ -93,6 +88,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/HomeDashboard.java" />
         <option value="$PROJECT_DIR$/src/test/java/LoginPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ParaForumProjectExample/HomeDashboard.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ParaForumProjectExample/LoginPage.java" />
       </list>
     </option>
   </component>
@@ -174,6 +171,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ParaForumProjectExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -200,14 +201,35 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/SeleniumNewTest" />
   </component>
-  <component name="RunManager" selected="JUnit.LoginPage">
+  <component name="RunManager" selected="JUnit.HomeDashboard">
     <configuration default="false" name="LoginPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="SeleniumProject" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginPage" />
+      <option name="PACKAGE_NAME" value="ParaForumProjectExample" />
+      <option name="MAIN_CLASS_NAME" value="ParaForumProjectExample.LoginPage" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="HomeDashboard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="SeleniumProject" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ParaForumProjectExample" />
+      <option name="MAIN_CLASS_NAME" value="ParaForumProjectExample.HomeDashboard" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -466,12 +488,14 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.LoginPage" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.HomeDashboard" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LoginPage" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.HomeDashboard" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.LoginPage" />
       </list>
     </recent_temporary>
   </component>
@@ -493,10 +517,27 @@
       <option name="project" value="LOCAL" />
       <updated>1476610519389</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New project setup">
+      <created>1476611046098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1476611046098</updated>
+    </task>
+    <task id="LOCAL-00003" summary="New package">
+      <created>1476611648799</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1476611648799</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="HomeDashboard - 2016.10.16 at 11h 44m 45s.xml">
+      <configuration name="HomeDashboard" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="LoginPage - 2016.10.16 at 11h 40m 52s.xml">
       <configuration name="LoginPage" configurationId="JUnit" />
     </history-entry>
@@ -550,7 +591,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="zkouska" />
-    <option name="LAST_COMMIT_MESSAGE" value="zkouska" />
+    <MESSAGE value="New project setup" />
+    <MESSAGE value="New package" />
+    <option name="LAST_COMMIT_MESSAGE" value="New package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -569,10 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/HomeDashboard.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParaForumProjectExample/HomeDashboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="35" />
+        <state relative-caret-position="186">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#checkTabsExist#0;class#HomeDashboard#0" expanded="false" />
@@ -581,12 +624,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/LoginPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParaForumProjectExample/LoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="238">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#openBrowser#0;class#LoginPage#0" expanded="false" />
             <element signature="method#validLogin#0;class#LoginPage#0" expanded="false" />
