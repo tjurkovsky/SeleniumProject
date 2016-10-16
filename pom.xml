@@ -8,5 +8,6 @@
     <artifactId>SeleniumFirstTest</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <profiles></profiles>
 
 </project>
