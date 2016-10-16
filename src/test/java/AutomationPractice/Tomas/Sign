@@ -1,0 +1,33 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+/**
+ * Created by Tomáš on 16.10.2016.
+ */
+public class HomePage {
+
+    public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "D://chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://automationpractice.com/index.php");
+        WebElement link;
+        link = driver.findElement(By.linkText("Sign in"));
+        link.click();
+        Thread.sleep(5000);
+        driver.findElement(By.id("email_create")).sendKeys("vetrelec117@seznam.cz");
+        driver.findElement(By.id("SubmitCreate")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.id("id_gender2")).click();
+        driver.findElement(By.id("customer_firstname")).sendKeys("Tester");
+        driver.findElement(By.id("customer_lastname")).sendKeys("Testerovic");
+        Thread.sleep(5000);
+        driver.quit();
+    }
+
+
+}
