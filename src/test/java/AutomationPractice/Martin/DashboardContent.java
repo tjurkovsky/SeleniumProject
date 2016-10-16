@@ -28,7 +28,9 @@ public class DashboardContent {
             element = driver.findElement(By.className("login"));
             if (element != null){
                 element.click();
-
+                driver.findElement(By.id("email")).sendKeys("mstancl@email.com");
+                driver.findElement(By.id("passwd")).sendKeys("kiklop");
+                driver.findElement(By.id("passwd")).submit();
             }
         }
         catch (Exception e){
