@@ -5,6 +5,7 @@ package AutomationPractice.Martin;
  */
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.*;
@@ -65,13 +66,26 @@ public class SignUpLogin {
         driver.findElement(By.id("passwd")).sendKeys("random");
         driver.findElement(By.id("passwd")).submit();
         try {
-            element = element.findElement(By.xpath(""));
+            element = driver.findElement(By.xpath("//div[@class='alert alert-danger']"));
         }
         catch (Exception e){
-            element = driver.findElement(By.xpath("//div[@class='alert alert-danger']"));
+
         }
         Assert.assertNotNull("No error has been shown up,after non existing user tried to login!",element);
     }       //checks if error shows up,after non existing user tries to login
+    @Test
+    public void validLoginData(){
+        driver.findElement(By.linkText("Sign in")).click();
+        driver.findElement(By.id("email")).sendKeys("mstancl@email.com");
+        driver.findElement(By.id("passwd")).sendKeys("kiklop");
+        driver.findElement(By.id("passwd")).submit();
+        try {
+            element = element.findElement(By.className("logout"));
+        }
+        catch (Exception e){
+        }
+        Assert.assertNotNull("User has not been signed up,even with correct login data!",element);
+    }       // checks if login works. Tries to login with correct login data
     @Test
     public void invalidEmailFormatSignUp(){
         driver.findElement(By.linkText("Sign in")).click();
@@ -83,7 +97,7 @@ public class SignUpLogin {
         catch (Exception e){
         }
         Assert.assertNotNull("Error of wrong email format has not been shown!",element);
-    }
+    } //checks if error shows up if wrong email format is provided
     @Test
     public void validEmailFormatSignUp(){
         driver.findElement(By.linkText("Sign in")).click();
@@ -95,11 +109,14 @@ public class SignUpLogin {
         catch (Exception e){
         }
         Assert.assertNotNull("Even though,right email has been provided,error has been shown!",element);
-    }
+    } //checks if OK sign shows up if right email format is provided
     @Test
     public void signUp(){
+        Random rand = new Random();
+        int value = rand.nextInt(100000);
+
         driver.findElement(By.linkText("Sign in")).click();
-        driver.findElement(By.id("email_create")).sendKeys("jsearrywooddsburnasdas@seznam.cz");
+        driver.findElement(By.id("email_create")).sendKeys("woodburn"+value+"@seznam.cz");
         driver.findElement(By.id("email_create")).submit();
         try{
             driver.findElement(By.id("id_gender1")).click();
@@ -126,9 +143,9 @@ public class SignUpLogin {
         catch (Exception e){
         }
         Assert.assertEquals("user has not beed succesfuly signed up!",element.getAttribute("innerText"),"Welcome to your account. Here you can manage all of your personal information and orders.");
-    }
-    @After
-    public void goBackAgain(){
-       // driver.get("http://automationpractice.com/index.php");
+    } //tries to create a new client
+    @AfterClass
+    public static void goBackAgain(){
+       driver.quit();
     }
 }
