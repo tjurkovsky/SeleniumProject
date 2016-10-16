@@ -76,9 +76,9 @@ public class SignUpLogin {
     @Test
     public void validLoginData(){
         driver.findElement(By.linkText("Sign in")).click();
-        driver.findElement(By.id("email")).sendKeys("mstancl@email.com");
+        driver.findElement(By.id("email")).sendKeys("jerrywoodburn@seznam.cz");
         driver.findElement(By.id("passwd")).sendKeys("kiklop");
-        driver.findElement(By.id("passwd")).submit();
+        driver.findElement(By.id("SubmitLogin")).click();
         try {
             element = element.findElement(By.className("logout"));
         }

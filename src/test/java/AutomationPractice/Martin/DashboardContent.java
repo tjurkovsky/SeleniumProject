@@ -28,13 +28,31 @@ public class DashboardContent {
             element = driver.findElement(By.className("login"));
             if (element != null){
                 element.click();
-                driver.findElement(By.id("email")).sendKeys("mstancl@email.com");
+                driver.findElement(By.id("email")).sendKeys("jerrywoodburn@seznam.cz");
                 driver.findElement(By.id("passwd")).sendKeys("kiklop");
-                driver.findElement(By.id("passwd")).submit();
+                driver.findElement(By.id("SubmitLogin")).click();
+                driver.get("http://automationpractice.com/index.php");
             }
         }
         catch (Exception e){
         }
+    }
+    @Test
+    public void checkTabsExist(){
+        List<WebElement>listOfTabs = new ArrayList<WebElement>();
+        try {
+            listOfTabs.add(driver.findElement(By.linkText("Women")));
+            listOfTabs.add(driver.findElement(By.linkText("Dresses")));
+            listOfTabs.add(driver.findElement(By.linkText("T-shirts")));
+        }
+        catch (Exception e){
+        }
+
+        Assert.assertEquals(3,listOfTabs.size());
+    } //checks if all three tabs exist on the home page
+    @After
+    public void goBackToHomeDashboard(){
+        driver.get("http://automationpractice.com/index.php");
     }
 
 
