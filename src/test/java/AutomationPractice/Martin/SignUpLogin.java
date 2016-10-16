@@ -9,11 +9,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import sun.security.util.Length;
 
 public class SignUpLogin {
     private static ChromeDriver driver;
@@ -27,6 +25,14 @@ public class SignUpLogin {
     @Before
     public void goToHomePage(){
         driver.get("http://automationpractice.com/index.php");
+        try{
+            element = driver.findElement(By.className("logout"));
+            if (element != null){
+                element.click();
+            }
+        }
+        catch (Exception e){
+        }
     }
     @Test
     public void invalidEmailFormatLogin(){
@@ -81,7 +87,7 @@ public class SignUpLogin {
     @Test
     public void validEmailFormatSignUp(){
         driver.findElement(By.linkText("Sign in")).click();
-        driver.findElement(By.id("email_create")).sendKeys("mstancl@email.cz");
+        driver.findElement(By.id("email_create")).sendKeys("random@email.cz");
         driver.findElement(By.id("email_create")).submit();
         try {
             element = driver.findElement(By.id("customer_firstname"));
@@ -93,7 +99,7 @@ public class SignUpLogin {
     @Test
     public void signUp(){
         driver.findElement(By.linkText("Sign in")).click();
-        driver.findElement(By.id("email_create")).sendKeys("jerrywoodburn1@seznam.cz");
+        driver.findElement(By.id("email_create")).sendKeys("jearrywooddsburnasdas@seznam.cz");
         driver.findElement(By.id("email_create")).submit();
         try{
             driver.findElement(By.id("id_gender1")).click();
@@ -123,6 +129,6 @@ public class SignUpLogin {
     }
     @After
     public void goBackAgain(){
-     //   driver.get("http://automationpractice.com/index.php");
+       // driver.get("http://automationpractice.com/index.php");
     }
 }
