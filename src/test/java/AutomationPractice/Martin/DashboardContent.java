@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 public class DashboardContent {
     private static ChromeDriver driver;
     WebElement element;
+
     @BeforeClass
     public static void openWebPage(){
         driver = new ChromeDriver();
