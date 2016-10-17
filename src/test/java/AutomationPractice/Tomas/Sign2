@@ -16,13 +16,17 @@ import java.util.concurrent.TimeUnit;
  */
 public class HomePage {
 
-        private static ChromeDriver driver;
+            private static ChromeDriver driver;
 
             @BeforeClass
             public static void openBrowser() {
-                driver = new ChromeDriver();
+                System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--disable-extensions");
+                driver = new ChromeDriver(options);
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 driver.manage().window().maximize();
+
         }
 
             @Before
@@ -32,10 +36,8 @@ public class HomePage {
             @Test
             public void sign() throws InterruptedException {
                 driver.findElement(By.linkText("Sign in")).click();
-                Thread.sleep(5000);
-                driver.findElement(By.id("email_create")).sendKeys("vetrelec118@seznam.cz");
+                driver.findElement(By.id("email_create")).sendKeys("vetrelec116@seznam.cz");
                 driver.findElement(By.id("SubmitCreate")).click();
-                Thread.sleep(5000);
                 driver.findElement(By.id("id_gender2")).click();
                 driver.findElement(By.id("customer_firstname")).sendKeys("Tester");
                 driver.findElement(By.id("customer_lastname")).sendKeys("Testerovic");
@@ -53,14 +55,10 @@ public class HomePage {
                 driver.findElement(By.id("other")).sendKeys("Hello, I am a test created by DastyBOI");
                 select.selectByValue("20");
                 driver.findElement(By.id("phone_mobile")).sendKeys("001692110");
-                Thread.sleep(5000);
                 driver.findElement(By.id("submitAccount")).click();
                 driver.findElement(By.linkText("Home")).click();
-
-
-
-            }
-
+                }
+                
             @AfterClass
             public static void closeBrowser(){
                driver.quit();
