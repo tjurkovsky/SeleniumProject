@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.*;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
@@ -17,12 +18,17 @@ import java.util.concurrent.TimeUnit;
 public class HomePage {
 
         private static ChromeDriver driver;
+        WebElement element;
 
             @BeforeClass
             public static void openBrowser() {
-                driver = new ChromeDriver();
+                System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--disable-extensions");
+                driver = new ChromeDriver(options);
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 driver.manage().window().maximize();
+
         }
 
             @Before
@@ -31,40 +37,43 @@ public class HomePage {
                      }
             @Test
             public void sign() throws InterruptedException {
-                driver.findElement(By.linkText("Sign in")).click();
-                Thread.sleep(5000);
-                driver.findElement(By.id("email_create")).sendKeys("vetrelec118@seznam.cz");
-                driver.findElement(By.id("SubmitCreate")).click();
-                Thread.sleep(5000);
-                driver.findElement(By.id("id_gender2")).click();
-                driver.findElement(By.id("customer_firstname")).sendKeys("Tester");
-                driver.findElement(By.id("customer_lastname")).sendKeys("Testerovic");
-                driver.findElement(By.id("passwd")).sendKeys("123abc");
-                driver.findElement(By.name("newsletter")).click();
-                driver.findElement(By.id("uniform-optin")).click();
-                driver.findElement(By.id("firstname")).sendKeys("Tester");
-                driver.findElement(By.id("lastname")).sendKeys("Testerovic");
-                driver.findElement(By.id("company")).sendKeys("microsoft");
-                driver.findElement(By.id("address1")).sendKeys("street123");
-                driver.findElement(By.id("address2")).sendKeys("apartment");
-                driver.findElement(By.id("city")).sendKeys("London");
-                driver.findElement(By.id("postcode")).sendKeys("10000");
-                Select select = new Select(driver.findElement(By.xpath("//select[@name='id_state']")));
-                driver.findElement(By.id("other")).sendKeys("Hello, I am a test created by DastyBOI");
-                select.selectByValue("20");
-                driver.findElement(By.id("phone_mobile")).sendKeys("001692110");
-                Thread.sleep(5000);
-                driver.findElement(By.id("submitAccount")).click();
-                driver.findElement(By.linkText("Home")).click();
-
-
+                try {
+                    driver.findElement(By.linkText("Sign in")).click();
+                    driver.findElement(By.id("email_create")).sendKeys("vetrelec110@seznam.cz");
+                    driver.findElement(By.id("SubmitCreate")).click();
+                    driver.findElement(By.id("id_gender2")).click();
+                    driver.findElement(By.id("customer_firstname")).sendKeys("Tester");
+                    driver.findElement(By.id("customer_lastname")).sendKeys("Testerovic");
+                    driver.findElement(By.id("passwd")).sendKeys("123abc");
+                    driver.findElement(By.name("newsletter")).click();
+                    driver.findElement(By.id("uniform-optin")).click();
+                    driver.findElement(By.id("firstname")).sendKeys("Tester");
+                    driver.findElement(By.id("lastname")).sendKeys("Testerovic");
+                    driver.findElement(By.id("company")).sendKeys("microsoft");
+                    driver.findElement(By.id("address1")).sendKeys("street123");
+                    driver.findElement(By.id("address2")).sendKeys("apartment");
+                    driver.findElement(By.id("city")).sendKeys("London");
+                    driver.findElement(By.id("postcode")).sendKeys("10000");
+                    Select select = new Select(driver.findElement(By.xpath("//select[@name='id_state']")));
+                    driver.findElement(By.id("other")).sendKeys("Hello, I am a test created by DastyBOI");
+                    select.selectByValue("20");
+                    driver.findElement(By.id("phone_mobile")).sendKeys("001692110");
+                    driver.findElement(By.id("submitAccount")).click();
+                    driver.findElement(By.linkText("Home")).click();
+                    element = driver.findElement(By.linkText("Sign XXX"));
+                } catch (Exception ex) {
+                    System.out.println("Sign out - nenalezeno: " +ex);
+                }
+                Assert.assertNotNull(element);
 
             }
 
-            @AfterClass
-            public static void closeBrowser(){
-               driver.quit();
-            }
+            //@AfterClass
+            //public static void closeBrowser(){
+           //     driver.quit();
+          //  }
 }
+
+
 
 
